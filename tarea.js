@@ -208,17 +208,31 @@ function tienenMismaLongitud(str1, str2) {
     //   Domicilio: 'Saavedra 123'
     //  }
 
-class Persona {
-    constructor(/*Escribir los argumentos que recibe el constructor*/) {
-      // Crea el constructor:
-
-    }
-}
+  class Persona {
+      constructor(nombre,apellido,edad,domicilio) {
+        // Crea el constructor:
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.domicilio=domicilio;
+      }
+      detalle(){
+        let personadetalle = {
+          nomobre: this.nombre,
+          apellido: this.apellido,
+          edad: this.edad,
+          domicilio: this.domicilio
+        }
+        return personadetalle
+      }
+  }
 
 const crearInstanciaPersona = (nombre, apellido, edad, dir)=>{
     //Con esta función vamos a crear una nueva persona a partir de nuestro constructor de persona (creado en el ejercicio anterior)
     //Recibirá los valores "Juan", "Perez", 22, "Saavedra 123" para sus respectivas propiedades
     //Devolver la nueva persona creada
+    let instancia = new Persona(nombre,apellido,edad,dir)
+    return instancia
     
 }
 
@@ -226,12 +240,19 @@ const sumarArray = (numeros, cb) =>{
     // Suma todos los números enteros (int/integers) de un array ("numeros")
     // Pasa el resultado a `cb`
     // No es necesario devolver nada
+    const suma = numeros.reduce((acumulador,valoractual)=>{
+      return acumulador+valoractual
+    })
+    cb = suma
 }
 
 const copiarEach = (array, cb) =>{
     // Itera sobre la matriz "array" y pasa los valores a cb uno por uno
     // Pista: Estarás invocando a `cb` varias veces (una por cada valor en el array)
     // no tienes que devolver nada
+    array.forEach(numero => {
+      cb = numero
+    });
     
   }
 
@@ -239,12 +260,22 @@ const copiarEach = (array, cb) =>{
     //Vamos a recibir una función que realiza una operación matemática junto con dos números.
     //Devolver la función pasándole como argumentos los números recibidos.
     //Tu código:
+    return cb(n1,n2)
   }
 
   function filter(array) {
     //Filtrar todos los elementos del array que comiencen con la letra "a".
     //Devolver un nuevo array con los elementos que cumplen la condición
     //Tu código:
+
+    let arreglo=[];
+    array.forEach(palabra => {
+      let string=palabra.split('');
+      if (string[0]==='a') {
+        arreglo.push(palabra)
+      }
+    });
+    return arreglo
   } 
 
 
