@@ -83,7 +83,7 @@ function tienenMismaLongitud(str1, str2) {
         default:
             return "Color not found"
     }
-    
+
   }
 
   const fizzBuzz = (numero)  => {
@@ -103,6 +103,7 @@ function tienenMismaLongitud(str1, str2) {
     {
         return "buzz"
     }
+  }
 
   const devolverPrimerElemento = (array) => {
     // Devuelve el primer elemento de un array
